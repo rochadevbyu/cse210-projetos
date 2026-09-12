@@ -1,37 +1,24 @@
 using System;
 using System.Collections.Generic;
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Insira uma lista de números e digite 0 quando terminar.");
-        
+class Program {
+    static void Main() {
         List<int> numeros = new List<int>();
         int numero = -1;
 
-        while (numero != 0)
-        {
+        Console.WriteLine("Insira uma lista de números e digite 0 quando terminar.");
+        while (numero != 0) {
             Console.Write("Insira o número: ");
             numero = int.Parse(Console.ReadLine());
-            
-            if (numero != 0)
-            {
-                numeros.Add(numero);
-            }
+            if (numero != 0) numeros.Add(numero);
         }
 
         int soma = 0;
         int maximo = numeros[0];
 
-        foreach (int num in numeros)
-        {
+        foreach (int num in numeros) {
             soma += num;
-            
-            if (num > maximo)
-            {
-                maximo = num;
-            }
+            if (num > maximo) maximo = num;
         }
 
         double media = (double)soma / numeros.Count;

@@ -1,9 +1,7 @@
 using System;
 
-class Program
-{
-    static void Main(string[] args)
-    {
+class Program {
+    static void Main() {
         Console.Write("Qual é o seu nome? ");
         string nome = Console.ReadLine();
         
