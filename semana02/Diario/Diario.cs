@@ -23,12 +23,13 @@ public class Diario
         if (_registros.Count == 0)
         {
             Console.WriteLine("O diário está vazio.");
-            return;
         }
-
-        foreach (Registro registro in _registros)
+        else
         {
-            registro.Exibir();
+            foreach (Registro registro in _registros)
+            {
+                registro.Exibir();
+            }
         }
     }
 

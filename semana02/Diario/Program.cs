@@ -22,14 +22,7 @@ class Program
             "O que eu aprendi hoje que posso aplicar no futuro?",
             "Quais perguntas ou duvidas surgiram em minha mente hoje?",
             "Como posso melhorar meu dia de amanhã com base no que aconteceu hoje?",
-            "O que me fez sorrir ou rir hoje?",
-            "Quais desafios enfrentei hoje e como os superei?",
-            "O que eu fiz hoje que me deixou orgulhoso de mim mesmo?",
-            "Como posso ser mais grato(a) pelas coisas boas que aconteceram hoje?",
-            "O que eu fiz hoje para ajudar ou apoiar alguém?",
-            "Quais foram os momentos de paz ou tranquilidade que experimentei hoje?",
-            "O que eu fiz hoje para cuidar de mim mesmo(a) e do meu bem-estar?",
-            "Quais foram as pequenas vitórias ou conquistas que tive hoje?"
+            "O que me fez sorrir ou rir hoje?"                 
         };
 
         Console.WriteLine("Bem-vindo ao Programa de Diário!");
