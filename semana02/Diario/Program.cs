@@ -68,13 +68,13 @@ class Program
             {
                 Console.Write("Qual é o nome do arquivo para carregar? ");
                 string nomeArquivo = Console.ReadLine();
-                
+                meuDiario.CarregarDoArquivo(nomeArquivo); 
             }
             else if (opcao == 4)
             {
                 Console.Write("Qual é o nome do arquivo para salvar? ");
                 string nomeArquivo = Console.ReadLine();
-                
+                meuDiario.SalvarNoArquivo(nomeArquivo); 
             }
             else if (opcao == 5)
                 {
