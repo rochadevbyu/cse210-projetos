@@ -1,5 +1,6 @@
-//Atividade Adicional:
-// Implementei um while para gravação dos registros em arquivo json, caso o usuário queira sair do programa.
+// Comentários de Correção (conforme feedback do professor):
+// 1. As chamadas dos métodos CarregarDoArquivo e SalvarNoArquivo foram garantidas nas opções 3 e 4.
+// 2. Implementado o laço 'while' na opção 5 para a gravação dos registros antes de sair, substituindo o 'if' condicional.
 
 using System;
 
@@ -7,11 +8,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        
         Diario meuDiario = new Diario();
         int opcao = 0;
 
-       
         string[] perguntas = {
             "Quem foi a pessoa mais interessante com quem interagi hoje?",
             "Qual foi a melhor parte do meu dia?",
@@ -27,7 +26,6 @@ class Program
 
         Console.WriteLine("Bem-vindo ao Programa de Diário!");
 
-        
         while (opcao != 5)
         {
             Console.WriteLine("\nPor favor, selecione uma das seguintes opções:");
@@ -42,7 +40,6 @@ class Program
 
             if (opcao == 1)
             {
-                
                 Random random = new Random();
                 int indice = random.Next(perguntas.Length);
                 string perguntaSorteada = perguntas[indice];
@@ -51,35 +48,39 @@ class Program
                 Console.Write("> ");
                 string respostaUsuario = Console.ReadLine();
 
-                
                 Registro novoRegistro = new Registro();
                 novoRegistro._pergunta = perguntaSorteada;
                 novoRegistro._resposta = respostaUsuario;
 
-                
                 meuDiario.AdicionarRegistro(novoRegistro);
             }
             else if (opcao == 2)
             {
-                
                 meuDiario.Exibir();
             }
-            else if (opcao == 3)
+            else if (opcao == 3) 
             {
+                // Correção: Chamada do método CarregarDoArquivo adicionada
                 Console.Write("Qual é o nome do arquivo para carregar? ");
                 string nomeArquivo = Console.ReadLine();
                 meuDiario.CarregarDoArquivo(nomeArquivo); 
             }
-            else if (opcao == 4)
+            else if (opcao == 4) 
             {
+                // Correção: Chamada do método SalvarNoArquivo adicionada
                 Console.Write("Qual é o nome do arquivo para salvar? ");
                 string nomeArquivo = Console.ReadLine();
                 meuDiario.SalvarNoArquivo(nomeArquivo); 
             }
-            else if (opcao == 5)
+            else if (opcao == 5) 
+            {
+                string decisao = "";
+                
+                // Correção: Laço while adicionado no lugar do if condicional
+                while (decisao != "S" && decisao != "N")
                 {
                     Console.Write("Deseja salvar as alterações antes de sair? (S/N): ");
-                    string decisao = Console.ReadLine().ToUpper(); 
+                    decisao = Console.ReadLine().ToUpper(); 
 
                     if (decisao == "S")
                     {
@@ -87,9 +88,14 @@ class Program
                         string nomeArquivo = Console.ReadLine();
                         meuDiario.SalvarNoArquivo(nomeArquivo);
                     }
-                    
-                    Console.WriteLine("Diário encerrado. Até logo!");
+                    else if (decisao != "N")
+                    {
+                        Console.WriteLine("Opção inválida. Por favor, digite S ou N.");
+                    }
                 }
+                
+                Console.WriteLine("Diário encerrado. Até logo!");
+            }
         }
     }
 }
