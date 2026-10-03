@@ -1,20 +1,23 @@
 using System;
-using System.Collections.Generic; // Necessário para usar a List<>
+using System.Collections.Generic;
 
 public class Video
 {
-    public string Titulo { get; set; }
-    public string Autor { get; set; }
-    public int Duracao { get; set; }
+    private string _titulo;
+    private string _autor;
+    private int _duracao;
     
     public List<Comentario> Comentarios { get; set; }
 
+    public string Titulo { get { return _titulo; } }
+    public string Autor { get { return _autor; } }
+    public int Duracao { get { return _duracao; } }
+
     public Video(string titulo, string autor, int duracao)
     {
-        Titulo = titulo;
-        Autor = autor;
-        Duracao = duracao;
-        // Inicializamos a lista para ela não ficar "nula"
+        _titulo = titulo;
+        _autor = autor;
+        _duracao = duracao;
         Comentarios = new List<Comentario>(); 
     }
 

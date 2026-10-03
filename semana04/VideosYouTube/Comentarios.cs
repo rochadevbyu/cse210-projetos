@@ -2,14 +2,16 @@ using System;
 
 public class Comentario
 {
-    // Atributos
-    public string Nome { get; set; }
-    public string Texto { get; set; }
+    private string _nome;
+    private string _texto;
 
-    // Construtor
+    // Propriedades públicas
+    public string Nome { get { return _nome; } }
+    public string Texto { get { return _texto; } }
+
     public Comentario(string nome, string texto)
     {
-        Nome = nome;
-        Texto = texto;
+        _nome = nome;
+        _texto = texto;
     }
 }
