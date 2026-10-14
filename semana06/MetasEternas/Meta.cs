@@ -20,4 +20,5 @@ public abstract class Meta
 
     public string ObterNome() { return _nome; }
     public virtual int ObterPontos() { return int.Parse(_pontos); }
+    
 }

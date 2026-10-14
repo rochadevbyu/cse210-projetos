@@ -29,4 +29,5 @@ public class MetaSimples : Meta
     {
         return $"MetaSimples:{_nome},{_descricao},{_pontos},{_estaConcluida}";
     }
+    
 }

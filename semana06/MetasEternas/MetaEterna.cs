@@ -24,4 +24,5 @@ public class MetaEterna : Meta
     {
         return $"MetaEterna:{_nome},{_descricao},{_pontos}";
     }
+    
 }

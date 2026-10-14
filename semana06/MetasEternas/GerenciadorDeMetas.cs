@@ -17,6 +17,7 @@ public class GerenciadorDeMetas
     {
         string opcao = "";
         while (opcao != "6")
+
         {
             ExibirInfoJogador();
             Console.WriteLine("\nOpções do Menu:");
@@ -27,6 +28,7 @@ public class GerenciadorDeMetas
             Console.WriteLine("  5. Registrar Evento");
             Console.WriteLine("  6. Sair");
             Console.Write("Selecione uma opção do menu: ");
+            
             opcao = Console.ReadLine();
 
             if (opcao == "1") CriarMeta();
@@ -69,7 +71,6 @@ public class GerenciadorDeMetas
         Console.WriteLine("  3. Meta de Lista de Tarefas");
         Console.Write("Que tipo de meta gostaria de criar? ");
         string tipo = Console.ReadLine();
-
         Console.Write("Qual é o nome da sua meta? ");
         string nome = Console.ReadLine();
         Console.Write("Qual é uma breve descrição da sua meta? ");
@@ -171,4 +172,5 @@ public class GerenciadorDeMetas
             }
         }
     }
+    
 }
