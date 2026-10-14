@@ -22,9 +22,9 @@ public class GerenciadorDeMetas
             Console.WriteLine("\nOpções do Menu:");
             Console.WriteLine("  1. Criar Nova Meta");
             Console.WriteLine("  2. Listar Metas");
-            Console.WriteLine("  3. Guardar Metas num Ficheiro");
-            Console.WriteLine("  4. Carregar Metas de um Ficheiro");
-            Console.WriteLine("  5. Registar Evento");
+            Console.WriteLine("  3. Guardar Metas num arquivo");
+            Console.WriteLine("  4. Carregar Metas de um arquivo");
+            Console.WriteLine("  5. Registrar Evento");
             Console.WriteLine("  6. Sair");
             Console.Write("Selecione uma opção do menu: ");
             opcao = Console.ReadLine();
@@ -121,10 +121,10 @@ public class GerenciadorDeMetas
 
     public void SalvarMetas() 
     {
-        Console.Write("Qual é o nome do ficheiro (ex: metas.txt)? ");
-        string ficheiro = Console.ReadLine();
+        Console.Write("Qual é o nome do arquivo (ex: metas.txt)? ");
+        string arquivo = Console.ReadLine();
 
-        using (StreamWriter outputFile = new StreamWriter(ficheiro))
+        using (StreamWriter outputFile = new StreamWriter(arquivo))
         {
             outputFile.WriteLine(_pontos);
             foreach (Meta meta in _metas)
@@ -136,12 +136,12 @@ public class GerenciadorDeMetas
 
     public void CarregarMetas() 
     {
-        Console.Write("Qual é o nome do ficheiro? ");
-        string ficheiro = Console.ReadLine();
+        Console.Write("Qual é o nome do arquivo? ");
+        string arquivo = Console.ReadLine();
 
-        if (File.Exists(ficheiro))
+        if (File.Exists(arquivo))
         {
-            string[] linhas = File.ReadAllLines(ficheiro);
+            string[] linhas = File.ReadAllLines(arquivo);
             _pontos = int.Parse(linhas[0]);
             _metas.Clear();
 
